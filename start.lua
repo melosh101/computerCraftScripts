@@ -1,11 +1,3 @@
-local download = http.get("https://raw.github.com/melosh101/computerCraftScripts/start") --This will make 'download' hold the contents of the file.
-local handle = download.readAll() --Reads everything in download
-download.close() --remember to close download!
-
-local file = fs.open("startup","w") --opens the file 'startup' with the permissions to write.
-file.write(handle) --writes all the stuff in handle to the file 'startup'.
-file.close() --remember to close download!
-
 local function get(repoFile,saveTo)
     local url = string.format("https://raw.githubusercontent.com/melosh101/computerCraftScripts/%s", repoFile)
     local download = http.get(url) --This will make 'download' hold the contents of the file.
@@ -21,3 +13,7 @@ local function get(repoFile,saveTo)
        print("an internet connection!")
       end --end the if
     end --close the function
+
+local download = get("start.lua", "start") --This will make 'download' hold the contents of the file.
+
+
