@@ -14,6 +14,6 @@ local function get(repoFile,saveTo)
       end --end the if
     end --close the function
 
-local download = get("start.lua", "start") --This will make 'download' hold the contents of the file.
+get("start.lua", "start") --This will make 'download' hold the contents of the file.
 
 
